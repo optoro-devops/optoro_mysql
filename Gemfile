@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'berkshelf', '~> 3.2.1'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.2.1'
+  gem 'test-kitchen', '~> 1.3.0'
   gem 'kitchen-ec2', '~> 0.8.0'
   gem 'kitchen-docker', '~> 1.5.0'
   gem 'kitchen-vagrant', '~> 0.15.0'
