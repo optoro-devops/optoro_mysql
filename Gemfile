@@ -10,6 +10,11 @@ group :integration do
 end
 
 group :development do
+  gem 'guard',  '~> 2.8.0'
+  gem 'guard-rubocop',  '~> 1.2.0'
+  gem 'guard-rspec',  '~> 4.3.0'
+  gem 'guard-foodcritic',  '~> 1.0.3'
+  gem 'guard-bundler',  '~> 2.0.0'
   gem 'chef-zero', '~> 2.2.1'
   gem 'foodcritic', '~> 4.0.0'
   gem 'chefspec', '~> 4.1.1'
