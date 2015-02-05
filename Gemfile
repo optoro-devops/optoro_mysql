@@ -21,4 +21,6 @@ group :development do
   gem 'rspec', '~> 3.1.0'
   gem 'strainer', '~> 3.4.0'
   gem 'rubocop', '~> 0.27.1'
+  gem 'knife-solo', '0.4.2'
+  gem 'knife-solo_data_bag', '1.1.0'
 end
