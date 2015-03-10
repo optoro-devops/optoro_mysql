@@ -11,6 +11,7 @@ end
 
 group :development do
   gem 'guard',  '~> 2.8.0'
+  gem 'guard-kitchen', '~> 0.0.2'
   gem 'guard-rubocop',  '~> 1.2.0'
   gem 'guard-rspec',  '~> 4.3.0'
   gem 'guard-foodcritic',  '~> 1.0.3'
