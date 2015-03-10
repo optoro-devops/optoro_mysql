@@ -6,8 +6,9 @@
 DIRNAME=${PWD##*/}
 for i in $(grep -rl optoro_skel * | grep -v .git | grep -v ${0##*/} ); do
   echo "Replacing optoro_skel in ${i}"
-  sed -i -e "s/optoro_skel/$DIRNAME/g" "$i"
+  #sed -i -e "s/optoro_skel/$DIRNAME/g" "$i"
+  ruby -pi -e "gsub('optoro_skel', '$DIRNAME')" $i               
 done
-    
+
 # Remove this file from the new repo
 git rm -f $0
