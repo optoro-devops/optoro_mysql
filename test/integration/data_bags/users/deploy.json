@@ -1,0 +1,11 @@
+{
+  "id": "deploy",
+  "home": "/home/deploy",
+  "groups": [
+    "sysadmin",
+    "deploy"
+  ],
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAwQYxJMZQubLjuaJSGzpTvbIg0dPtPg2oQK1LsgRLyimQRlcFEa6BSaI5H6L5w7MwbGqBOmtH2uvv+KcgAkpEK4PyY9LatFplkq5OMMw2xfOzG7GIpnc3afORifuJvroox1cMMk0VbUyPTgFVIbkel7efts9mgPIR0y/uv3N7s1G8L21+z7+p6bQi2hF2mNRYWMOFfynYWL8Xp1Y9wG7BjcJnnRjPVXcyZQYMXCWgBQWf5MijMK+dvoDNGbyma0YNfixSOjZShegXjLuiERyDFecAD0Y6IOL0aybIdrxTufCzd2K5zqK36qZFiyLLf+WmgDqlF2gT7J925tFwRjvgbw== optoro-deploy"
+  ]
+}

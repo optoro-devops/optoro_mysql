@@ -1,0 +1,6 @@
+{
+  "id": "user1",
+  "ssh_keys": ["ssh-rsa PUBLIC_KEY"],
+  "groups": ["sysadmin"],
+  "shell": "/bin/bash"
+}

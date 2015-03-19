@@ -1,0 +1,33 @@
+{
+  "id": "link",
+  "name": {
+    "encrypted_data": "hIJ7AX8AT81EMJ5Sr1UOGAZksrZ9q3LLH3+EmL+qwW0=\n",
+    "iv": "YTcyPsF9HjUZlQYSqiyNoA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "M9yIu3G7Jj/s4QDs29kmJgpVUKYFcZNUJhmx7AdO4ZgMER27W9DQxI4Jz/IE\nNVUm\n",
+    "iv": "zcJmCA9PTFHIqY2Zbr6pIg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "hqC6JqDfvDJ+sMA06bUtX54jDH30OjNUBPcMYWLoJQQ=\n",
+    "iv": "MT9eCpFHGTlrPTd4VfP77w==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "/pS3R2JNwvBWPqq2xXr8+gMo9jKXn/tSwGQRDnCOBpw=\n",
+    "iv": "2zsn6AeU8bPlXLZBqU06Nw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "iCj3ky8F1bg+t+zXQ/f2+W9NBjn+xU6RiEJ6fIUgeOY=\n",
+    "iv": "SatCZSYQwGJBUrG322KHiw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

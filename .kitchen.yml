@@ -17,4 +17,25 @@ suites:
 - name: default
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
-    - recipe[optoro_skel::default]
+    - recipe[optoro_base::default]
+    - recipe[optoro_base::test]
+    - recipe[optoro_mysql::default]
+  attributes:
+    chef_client:
+      reload_config: false
+    percona:
+      encrypted_data_bag_secret_file: "test/integration/encrypted_data_bag_secret"
+
+- name: zfs
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_base::default]
+    - recipe[optoro_base::test]
+    - recipe[optoro_mysql::default]
+  attributes:
+    chef_client:
+      reload_config: false
+    percona:
+      encrypted_data_bag_secret_file: "test/integration/encrypted_data_bag_secret"
+    optoro_mysql:
+      zfs: true

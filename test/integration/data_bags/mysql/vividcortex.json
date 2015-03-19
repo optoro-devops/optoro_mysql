@@ -1,0 +1,33 @@
+{
+  "id": "vividcortex",
+  "name": {
+    "encrypted_data": "d20cvohlyw53G7CihY/x/XYi0wj4g2copOkh95ZOqZM=\n",
+    "iv": "JC09GqVCiq0eAjnoEI1u0A==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "SzKAEgniFnpc6pQ0BM2WyrMaZuA/6MNrpSgfhEb2Roc=\n",
+    "iv": "qbUlOT7hO2Ul+fYjRl9SgQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "MLpmqiuDUUWrSKiYwZT2Y7eQHlkwkbMDPy/bjNLHWP0=\n",
+    "iv": "lp0ZbuY/7h/PbB0yw3MxKA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "hY+79N74XE8A3kuorkBBWNdR8c0Z7XEvm4h7ZRQWKUY=\n",
+    "iv": "KiLhyleod4N6XC5/PPK96g==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "ym1Diwk2/3nOZnllmyfbW/jGk4+Tguo2jW+/M6IlaAc3hitBJYiDILTzsqZy\ny+Oz\n",
+    "iv": "UC5Bu7wS/xwFxBrUXQ8RvQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

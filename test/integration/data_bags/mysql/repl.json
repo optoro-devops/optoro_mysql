@@ -1,0 +1,33 @@
+{
+  "id": "repl",
+  "name": {
+    "encrypted_data": "SseqekTvF//+E6i/cHtmkpSVHYSy/3Q9n+qu5AV98b4=\n",
+    "iv": "R3R8i2xz69My4u3yiCKNeA==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "LTL5E11ZHVhATVPGF9SeXmR25wirtBenJkMEhJxQolM=\n",
+    "iv": "YJOxgTQKiajurWsghHLnhg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "qwPKab81FKCmmeWI9RoDMSYq4BkEresUH4yTU3h6dZc=\n",
+    "iv": "VEscZ1Wg+bc/G5p30g4H5A==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "3/SeW/FIimivGKxH0VA0zOhJZOSvGDCtNw/mjY5fHc8=\n",
+    "iv": "RCwsjhyr1IhtK/+wki7O7w==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "PzOuf7ymxxQfSZJ82D3DfJxI8s/87mLVljiKOVeKVx4+i5tVN997fAp6AspV\n0gWd\n",
+    "iv": "rMLakcNhcL35jMvYmGn8Zw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

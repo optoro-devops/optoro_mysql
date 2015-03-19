@@ -1,0 +1,33 @@
+{
+  "id": "optiturn_local",
+  "name": {
+    "encrypted_data": "oPvGmuVp+9wcuZL0mJsvZLu4FMh4xr9lp6If9aTk7nM=\n",
+    "iv": "lBne4yd630QnztDgHu9oOQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "e/4pQNvz4joSwXLBREtGu3Res351Fyr1/hPwWq7E6fA=\n",
+    "iv": "Q9cSlxnp26ZLzJmAhrzRlQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "w0D/qlmEeKY5olUH5+KDJ58bm0PJx3uH1NDgc6ymxTpN5GFbKpTRiCW9zqWG\nw8O5\n",
+    "iv": "YkJiupkvwyDaaECdx3Or1w==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "lEJRQEwE9G3jowLwkmxPFtK4xmsbjtIwSk5cv+TsJQQ=\n",
+    "iv": "ZbKMgq+gkWOnkfIuh6YHtw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "9+02DJHr1fD6ZIO6dBDzUwIjLXMxjSiFuSyoAboHgbY=\n",
+    "iv": "OC1DKwAuE0DeHe2It1mXng==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}

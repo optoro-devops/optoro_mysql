@@ -1,0 +1,33 @@
+{
+  "id": "spexy",
+  "name": {
+    "encrypted_data": "BkBhRrk8SjMq+HmlJ293ITN2n7j75a26yyad57Q5JOQ=\n",
+    "iv": "CXvdbOddpCPRQfSNTj8CqQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "Fxe6fFuzsNHUHGS4n4ss2R/rh7xxtjkdMX2q3xg9u+DqE/NXCeJbTfv9qq9T\nSq6x\n",
+    "iv": "mUm0fL0LQ2M9HzDqyzRLrQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "database_name": {
+    "encrypted_data": "1EPBNAZV58oM6dw2B61rnSkk97FmZBLaWGrB+EyChuM=\n",
+    "iv": "rDPmuBjqf6ArMe91bANKNw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "host": {
+    "encrypted_data": "WUXrSgFmfZykl1Uce669dZohXwJyPWeL7GCdiLmh3y0=\n",
+    "iv": "QOb9jM7NnnQpQSgWqZjKlw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "ZAJnt84M6KWqfRJYHctHePWCnP5Z6BAYUbXgjaSLVVDLPSOTFMHsKmt6ZCz5\nPO8Yi+jRfftq3pWlwTU+pxHGsTANxpzOUF+9u7Mr30eBZko0a4FDEPUJYDNC\nluSdDdksseFGwCMQs4J3ofpJZkRxNNgZQ7Z+PzaqElNEM9tPbMESaxgqgcM0\nXrCdsVP9CvkNA8Pt9WMoCGrUYNhOBT2mrKll6sefhrB/UDlcAq38x+SuH+cA\noo+KUoPhR9fApmyNpHr+DW6zfQNNfrcMYQa9rw0BSDRfZKpn8NMiccd69Co=\n",
+    "iv": "AV4qPT810m9IWQPU6AUtKg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
