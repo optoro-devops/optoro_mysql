@@ -5,6 +5,7 @@ shared_context 'optoro_mysql' do
     stub_command('test -f /var/optoro/lib/mysql/user.frm').and_return(0)
     stub_command("mysqladmin --user=root --password='' version").and_return(0)
 
+    allow(Chef::EncryptedDataBagItem).to receive(:load).and_call_original
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('passwords', 'mysql').and_return('root' => 'master')
 
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('mysql', 'optiturn').and_return(
