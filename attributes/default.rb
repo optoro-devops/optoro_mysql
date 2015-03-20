@@ -25,7 +25,7 @@ default['percona']['server']['server_id'] = Chef::Config[:node_name].gsub(/[^0-9
 default['percona']['main_config_file'] = '/etc/mysql/my.cnf'
 default['percona']['encrypted_data_bag_secret_file'] = '/etc/chef/encrypted_data_bag_secret'
 default['percona']['client']['packages'] = %w( libperconaserverclient18-dev percona-server-client-5.5 )
-# default['percona']['apt_keyserver'] = 'pgp.mit.edu'
+default['percona']['apt_keyserver'] = 'pgp.mit.edu'
 
 default['optoro_mysql']['users'] = %w( optiturn monitor optiturn_local spexy link repl vividcortex )
 default['optoro_mysql']['zfs'] = false

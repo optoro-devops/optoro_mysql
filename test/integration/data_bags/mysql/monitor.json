@@ -1,32 +1,32 @@
 {
   "id": "monitor",
   "name": {
-    "encrypted_data": "4f5pUfWyILQ9d8SCJJrTRov4rwUFFnIRHedr71T02dk=\n",
-    "iv": "u14Bh3eabZobf+0WOa9dFA==\n",
+    "encrypted_data": "IKcKL2JgPeFiFrXrG+Hq1K/KtTCBQcEcS7ROb+EzX5E=\n",
+    "iv": "179+o5J2+68eAhf0WU1csA==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "password": {
-    "encrypted_data": "dywA+yzFLLbGkPiztmo7jYVRpW2IYSw81JYmFDqHWzOTOtDghhK1Vs585rm1\nqY5Q\n",
-    "iv": "Yr6lqissBuCsws9bLY4WGQ==\n",
+    "encrypted_data": "n1Mg1ZcopjtXbbvXhewr80/jmL5KOVhss03vd8qQKOs=\n",
+    "iv": "aLp9ldCG8vT92CHf9SUriA==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "host": {
-    "encrypted_data": "ck1o3vabWahoa0J4p26iiqTPRvDUC+6khm15UXrrlEo=\n",
-    "iv": "7KetH1Gf/m6rHLHc2ZAOOQ==\n",
+    "encrypted_data": "ZdFFWvnf3yNjI25uyYABCMBz+RYgQ5LIc9i+fiQ+Jwk=\n",
+    "iv": "s1IcQZ+AUOkshZnXloQFjQ==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "database_name": {
-    "encrypted_data": "1P3amb0Yppafv+LaCoxXK15zKmSj6ifKUFfKOkpnheE=\n",
-    "iv": "97H+rgM5flJQ6EavYbTHnA==\n",
+    "encrypted_data": "u7DgPUnk95MwzatDvDD5UKMlOJfGXWchXUKciMSVQ9I=\n",
+    "iv": "Qy8dYcXkgIIbCSHIPEBc7w==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   },
   "mysql_permissions": {
-    "encrypted_data": "hoBydXD12tGxRTtUD7w0UU4PTSFxbKINxMJlYy7jtp4=\n",
-    "iv": "9OhRj08SLQr+PHHhkHKgxQ==\n",
+    "encrypted_data": "RgYrnIufkAvTkRFkH8dVOXjO+P1PINpCcYOZkZC7PqM=\n",
+    "iv": "c+LqVlRn9T1ReWnxUsua9w==\n",
     "version": 1,
     "cipher": "aes-256-cbc"
   }
