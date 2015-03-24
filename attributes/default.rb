@@ -1,7 +1,8 @@
 default['percona']['server']['logdir'] = '/var/optoro/log/mysql'
 default['percona']['server']['tmpdir'] = '/var/optoro/lib/mysql_tmp'
 default['percona']['server']['package'] = 'percona-server-server-5.5'
-default['percona']['server']['datadir'] = '/var/optoro/lib'
+default['percona']['version'] = '5.5'
+# default['percona']['server']['datadir'] = '/var/optoro/lib'
 default['percona']['server']['bind_address'] = '*'
 default['percona']['client']['packages'] = %w( libperconaserverclient18-dev percona-server-client-5.5 )
 default['percona']['server']['log_bin'] = 'mysql-bin'
@@ -29,3 +30,4 @@ default['percona']['apt_keyserver'] = 'pgp.mit.edu'
 
 default['optoro_mysql']['users'] = %w( optiturn monitor optiturn_local spexy link repl vividcortex )
 default['optoro_mysql']['zfs'] = false
+default['optoro_mysql']['innodb_log_dir'] = '/var/lib/mysql/innodb-logs'
