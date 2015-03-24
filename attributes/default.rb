@@ -30,4 +30,4 @@ default['percona']['apt_keyserver'] = 'pgp.mit.edu'
 
 default['optoro_mysql']['users'] = %w( optiturn monitor optiturn_local spexy link repl vividcortex )
 default['optoro_mysql']['zfs'] = false
-default['optoro_mysql']['innodb_log_dir'] = '/var/lib/mysql/innodb-logs'
+default['optoro_mysql']['innodb_log_dir'] = node['percona']['server']['datadir']
