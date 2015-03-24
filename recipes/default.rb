@@ -16,6 +16,12 @@ chef_gem 'mysql2' do
   action :install
 end
 
+directory node['optoro_mysql']['innodb_log_dir'] do
+  owner 'mysql'
+  group 'mysql'
+  mode '0700'
+end
+
 include_recipe 'percona::server'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
