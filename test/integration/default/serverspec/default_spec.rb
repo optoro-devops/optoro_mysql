@@ -22,4 +22,12 @@ describe 'MySQL Service' do
       it { should have_entry(cron_entry).with_user('deploy')  }
     end
   end
+
+  describe file('/etc/mysql/conf.d/db.cnf') do
+    it { should be_file }
+    it { should be_owned_by 'root' }
+    it { should be_grouped_into 'root' }
+    it { should be_mode '644' }
+    it { should_not contain('skip-innodb_doublewrite') }
+  end
 end

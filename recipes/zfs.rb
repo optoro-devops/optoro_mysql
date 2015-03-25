@@ -1,9 +1,13 @@
-file_action = node['optoro_mysql']['zfs'] ? :create : :delete
-
 template '/etc/mysql/conf.d/db.cnf' do
   owner 'root'
   group 'root'
   mode '0644'
-  action file_action
-  notifies :restart, 'service[mysql]', :delayed
+  action :create
+  notifies :run, 'execute[restart mysql]', :immediately
+end
+
+execute 'restart mysql' do # ~FC004
+  command 'sudo /etc/init.d/mysql stop && sudo /etc/init.d/mysql start'
+  retries 3
+  action :nothing
 end

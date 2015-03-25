@@ -1,5 +1,7 @@
 [mysqld]
+<% if node['optoro_mysql']['zfs'] %>
 innodb_use_native_aio = 0
+skip-innodb_doublewrite
+<% end %>
 innodb_log_group_home = <%= node['optoro_mysql']['innodb_log_dir'] %>
 
-skip-innodb_doublewrite
