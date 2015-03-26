@@ -9,33 +9,31 @@ provisioner: chef_zero
 
 platforms:
 - name: ubuntu-14.04
-  driver_config:
-    box: opscode_ubuntu-14.04_chef-provisionerless
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
+#  driver_config:
+#    box: opscode_ubuntu-14.04_chef-provisionerless
+#    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
 
 suites:
 - name: default
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
-    - recipe[optoro_base::default]
-    - recipe[optoro_base::test]
+    - recipe[optoro_mysql::test]
     - recipe[optoro_mysql::default]
   attributes:
     chef_client:
       reload_config: false
     percona:
-      encrypted_data_bag_secret_file: "test/integration/encrypted_data_bag_secret"
+      encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
 
 - name: zfs
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
-    - recipe[optoro_base::default]
-    - recipe[optoro_base::test]
+    - recipe[optoro_mysql::test]
     - recipe[optoro_mysql::default]
   attributes:
     chef_client:
       reload_config: false
     percona:
-      encrypted_data_bag_secret_file: "test/integration/encrypted_data_bag_secret"
+      encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
     optoro_mysql:
       zfs: true
