@@ -5,6 +5,10 @@ shared_context 'optoro_mysql' do
     stub_command('test -f /var/optoro/lib/mysql/user.frm').and_return(0)
     stub_command("mysqladmin --user=root --password='' version").and_return(0)
 
+    allow(File).to receive(:size).and_call_original
+    allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile0').and_return(5)
+    allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile1').and_return(5)
+
     allow(Chef::EncryptedDataBagItem).to receive(:load).and_call_original
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('passwords', 'mysql').and_return('root' => 'test')
 
