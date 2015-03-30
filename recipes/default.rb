@@ -25,9 +25,9 @@ directory node['optoro_mysql']['innodb_log_dir'] do
   recursive true
 end
 
+include_recipe 'optoro_mysql::zfs'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
 include_recipe 'optoro_mysql::users'
 include_recipe 'optoro_mysql::backup'
 include_recipe 'optoro_mysql::logrotate'
-include_recipe 'optoro_mysql::zfs'
