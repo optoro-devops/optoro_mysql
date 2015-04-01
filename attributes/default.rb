@@ -23,7 +23,8 @@ default['percona']['encrypted_data_bag_secret_file'] = '/etc/chef/encrypted_data
 default['percona']['client']['packages'] = %w( libperconaserverclient18-dev percona-server-client-5.5 )
 default['percona']['apt_keyserver'] = 'pgp.mit.edu'
 default['percona']['auto_restart'] = false
-
+default['percona']['conf']['mysqld']['innodb_use_native_aio'] = '1'
+default['percona']['conf']['mysqld']['skip-innodb_doublewrite'] = '1'
+default['percona']['conf']['mysqld']['innodb_log_group_home'] = node['percona']['server']['datadir']
+default['percona']['conf']['mysqld']['innodb_data_home_dir'] = node['percona']['server']['datadir']
 default['optoro_mysql']['users'] = %w( optiturn monitor optiturn_local spexy link repl vividcortex )
-default['optoro_mysql']['zfs'] = false
-default['optoro_mysql']['innodb_log_dir'] = '/var/lib/mysql-innodb'

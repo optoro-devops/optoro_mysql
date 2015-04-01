@@ -26,7 +26,7 @@ describe 'optoro_mysql::default' do
           optoro_mysql::users
           optoro_mysql::backup
           optoro_mysql::logrotate
-          optoro_mysql::zfs
+          optoro_mysql::log_fix
         ).each do |recipe|
           it "includes the #{recipe} recipe" do
             expect(chef_run).to include_recipe recipe
