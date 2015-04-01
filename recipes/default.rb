@@ -18,14 +18,21 @@ end
 
 include_recipe 'percona::server'
 
-directory node['optoro_mysql']['innodb_log_dir'] do
+directory node['percona']['conf']['mysqld']['innodb_log_group_home'] do
   owner 'mysql'
   group 'mysql'
   mode '0700'
   recursive true
 end
 
-include_recipe 'optoro_mysql::zfs'
+directory node['percona']['conf']['mysqld']['innodb_data_home_dir'] do
+  owner 'mysql'
+  group 'mysql'
+  mode '0700'
+  recursive true
+end
+
+include_recipe 'optoro_mysql::log_fix'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
 include_recipe 'optoro_mysql::users'
