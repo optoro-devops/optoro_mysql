@@ -1,8 +1,18 @@
-mysql_creds = Chef::EncryptedDataBagItem.load('passwords', 'mysql')
+require 'openssl'
+mysql_creds = Chef::EncryptedDataBagItem.load(node['percona']['encrypted_data_bag'], 'mysql')
 mysql_connection_info = { :host => 'localhost', :username => 'root', :password => mysql_creds['root'] }
 
-node['optoro_mysql']['users'].each do |user|
-  new_user = Chef::EncryptedDataBagItem.load('mysql', user)
+#{
+#  'root' => 'password',
+#  'optiturn' => {
+#     'host' => 'localhost',
+#     'password' => 'blagh',
+#     'mysql_permissions' => 'all'
+#
+#  }
+#}
+mysql_creds.keys.each do |user|
+  new_user = Chef::EncryptedDataBagItem.load(node['percona']['encrypted_data_bag'], user)
 
   # to select all databases (*) we need to pass in nil and let the cookbook resource use it's default
   # passing in '*' seems like it would make sense but causes a failure

@@ -16,6 +16,7 @@ chef_gem 'mysql2' do
   action :install
 end
 
+include_recipe 'optoro_mysql::setup'
 include_recipe 'percona::server'
 
 directory node['percona']['conf']['mysqld']['innodb_log_group_home'] do
