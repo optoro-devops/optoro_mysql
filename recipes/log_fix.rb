@@ -1,6 +1,6 @@
 log_size = node['percona']['server']['innodb_log_file_size'].to_i * 1024 * 1024
-log0 = "#{node['percona']['server']['datadir']}/ib_logfile0"
-log1 = "#{node['percona']['server']['datadir']}/ib_logfile1"
+log0 = "#{node['percona']['conf']['mysqld']['innodb_log_group_home']}/ib_logfile0"
+log1 = "#{node['percona']['conf']['mysqld']['innodb_log_group_home']}/ib_logfile1"
 
 bash 'fix innodb-log-file-size' do
   action :run

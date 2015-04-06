@@ -20,6 +20,7 @@ describe 'optoro_mysql::default' do
 
         %w(
           sysctl::default
+          optoro_mysql::setup
           percona::server
           percona::toolkit
           percona::backup
