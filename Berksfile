@@ -5,4 +5,5 @@ cookbook 'database', '~> 4.0.3'
 cookbook 'logrotate', '~> 1.8.0'
 cookbook 'cron', '~> 1.6.1'
 cookbook 'apt'
+cookbook 'openssl'
 metadata
