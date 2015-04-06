@@ -5,12 +5,10 @@ shared_context 'optoro_mysql' do
     stub_command('test -f /var/optoro/lib/mysql/user.frm').and_return(0)
     stub_command("mysqladmin --user=root --password='' version").and_return(0)
 
-    @rest = mock("Chef::REST")
-    Chef::REST.stub!(:new).and_return(@rest)
+    # Enable why run so that Chef doesn't try to communicate with a Chef server 
+    # during data bag creation/load.
+    Chef::Config[:why_run] = true
     allow(Chef::EncryptedDataBagItem).to receive(:load_secret).and_return('testsecret')
-    expect(Chef::DataBagItem).to receive(:save).and_return(true)
-    allow(Chef::DataBagItem).to receive(:save).and_return(true)
-    allow(Chef::DataBagItem).to receive(:save).and_return(true)
 
     allow(File).to receive(:size).and_call_original
     allow(File).to receive(:exist?).and_call_original
@@ -19,7 +17,6 @@ shared_context 'optoro_mysql' do
     allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile0').and_return(5)
     allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile1').and_return(5)
 
-    allow(Chef::EncryptedDataBagItem).to receive(:load).and_call_original
     allow(Chef::EncryptedDataBagItem).to receive(:load).with('passwords', 'mysql').and_return(
       'id' => 'mysql',
       'root' => 'test',
