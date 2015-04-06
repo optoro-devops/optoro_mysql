@@ -17,7 +17,7 @@ shared_context 'optoro_mysql' do
     allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile0').and_return(5)
     allow(File).to receive(:size).with('/var/lib/mysql/ib_logfile1').and_return(5)
 
-    allow(Chef::EncryptedDataBagItem).to receive(:load).with('passwords', 'mysql', 'testsecret').and_return(
+    allow(Chef::EncryptedDataBagItem).to receive(:load).and_return(
       'id' => 'mysql',
       'root' => 'test',
       'optiturn' => {
