@@ -37,7 +37,7 @@ mysql_creds.to_hash.keys.select { |key| key !~ /(id|root|backup|replication)/ }.
   # these default values will be used for any field that was not specified in the data bag already
   default_user_hash = {
     'host' => 'localhost',
-    'mysql_permissions' => 'all',
+    'mysql_permissions' => ['all'],
     'database_name' => 'test',
     'name' => user,
     'password' => secure_password
