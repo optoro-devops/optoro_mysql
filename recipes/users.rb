@@ -11,8 +11,12 @@ mysql_creds.to_hash.keys.select { |key| key !~ /(id|root|backup|replication)/ }.
   # passing in '*' seems like it would make sense but causes a failure
   database = mysql_creds[user]['database_name'] == '*' ? nil : mysql_creds[user]['database_name']
 
-  log mysql_creds.to_hash do
-    level :info
+  # only log the hash if in a chef-zero (hence localhost) run so that we can find the mysql user passwords
+  # for a real chef-server run the databags will be updated and the passwords can be found there
+  if !defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/ # ~FC023
+    log "#{user}, #{mysql_creds[user]['password']}" do
+      level :info
+    end
   end
 
   mysql_database_user mysql_creds[user]['name'] do
