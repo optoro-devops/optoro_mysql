@@ -13,7 +13,7 @@ mysql_creds.to_hash.keys.select { |key| key !~ /(id|root|backup|replication)/ }.
 
   # only log the hash if in a chef-zero (hence localhost) run so that we can find the mysql user passwords
   # for a real chef-server run the databags will be updated and the passwords can be found there
-  if !defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/
+  if !defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/ # ~FC023
     log "#{user}, #{mysql_creds[user]['password']}" do
       level :info
     end
