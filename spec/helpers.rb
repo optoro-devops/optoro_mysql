@@ -24,7 +24,8 @@ shared_context 'optoro_mysql' do
         'database_name' => 'inventory_production',
         'host' => '%',
         'mysql_permissions' => ['all'],
-        'name' => 'optiturn'
+        'name' => 'optiturn',
+        'password' => 'test'
       },
       'monitor' => {
         'database_name' => '*',

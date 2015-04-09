@@ -37,7 +37,6 @@ suites:
       encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
       conf:
         mysqld:
-          innodb_log_group_home: '/mysql/innodb_logs'
+          innodb-log-group-home-dir: '/mysql/innodb_logs'
           innodb_use_native_aio: '0'
-          skip-innodb_doublewrite: '0'
           innodb_data_home_dir: '/mysql/innodb_data'

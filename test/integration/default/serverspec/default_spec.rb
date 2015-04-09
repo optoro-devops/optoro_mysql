@@ -24,7 +24,6 @@ describe 'MySQL Service' do
   end
 
   describe file('/etc/mysql/my.cnf') do
-    it { should contain('skip-innodb_doublewrite = 1') }
     it { should contain('innodb_use_native_aio = 1') }
   end
 end

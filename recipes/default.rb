@@ -19,7 +19,7 @@ end
 include_recipe 'optoro_mysql::setup'
 include_recipe 'percona::server'
 
-directory node['percona']['conf']['mysqld']['innodb_log_group_home'] do
+directory node['percona']['conf']['mysqld']['innodb-log-group-home-dir'] do
   owner 'mysql'
   group 'mysql'
   mode '0700'
