@@ -4,7 +4,7 @@ maintainer 'devops@optoro.com'
 license 'MIT'
 description 'This is a wrapper around the percona cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.0.8'
+version '0.0.9'
 
 depends 'percona', '~> 0.16.0'
 depends 'sysctl', '~> 0.6.2'
