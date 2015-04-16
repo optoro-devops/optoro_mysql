@@ -38,6 +38,10 @@ describe 'optoro_mysql::default' do
           expect(chef_run).to use_sysctl_param('vm.swappiness').with('value' => 0)
         end
 
+        it 'create the /var/optoro' do
+          expect(chef_run).to create_directory('/var/optoro')
+        end
+
         it 'create the /var/optoro/backup directory' do
           expect(chef_run).to create_directory('/var/optoro/backup')
         end
