@@ -28,3 +28,16 @@ default['percona']['conf']['mysqld']['innodb_use_native_aio'] = '1'
 default['percona']['conf']['mysqld']['innodb-log-group-home-dir'] = node['percona']['server']['datadir']
 default['percona']['conf']['mysqld']['innodb_data_home_dir'] = node['percona']['server']['datadir']
 default['optoro_mysql'] = {}
+
+default['optoro_zfs']['zfs_arc_max'] = (node['memory']['total'].to_i * 0.05 * 1024).round(0).to_s
+default['percona']['server']['innodb_data_dir'] = '/mysql/innodb_data'
+default['percona']['encrypted_data_bag'] = 'passwords'
+default['optoro_mysql']['users'] = %w( optiturn monitor optiturn_local spexy link repl vividcortex )
+default['percona']['server']['tmpdir'] = '/mysql/tmp'
+default['percona']['server']['max_allowed_packet'] = '256M'
+default['percona']['conf']['mysqld']['skip-innodb_doublewrite'] = '0'
+
+# Comes from optoro_optiturn_role, not sure why there is a conflict
+# default['percona']['conf']['mysqld']['innodb_use_native_aio'] = '0'
+# default['percona']['conf']['mysqld']['innodb_data_home_dir'] = '/mysql/innodb_data'
+# default['percona']['conf']['mysqld']['innodb-log-group-home-dir'] = '/mysql/innodb_logs'
