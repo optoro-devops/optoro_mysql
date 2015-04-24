@@ -99,7 +99,6 @@ describe 'optoro_mysql::default' do
           expect(chef_run).to create_mysql_database_user('monitor')
           expect(chef_run).to grant_mysql_database_user('monitor')
         end
-
       end
     end
   end
