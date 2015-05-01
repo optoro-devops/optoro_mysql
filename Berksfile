@@ -4,6 +4,8 @@ cookbook 'sysctl', '~> 0.6.2'
 cookbook 'database', '~> 4.0.3'
 cookbook 'logrotate', '~> 1.8.0'
 cookbook 'cron', '~> 1.6.1'
+cookbook 'optoro_zfs'
+cookbook 'aws'
 cookbook 'apt'
 cookbook 'openssl'
 metadata

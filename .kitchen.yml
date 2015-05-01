@@ -31,6 +31,8 @@ suites:
     - recipe[optoro_mysql::test]
     - recipe[optoro_mysql::default]
   attributes:
+    optoro_mysql:
+      use_zfs: true
     chef_client:
       reload_config: false
     percona:

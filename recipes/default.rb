@@ -33,6 +33,8 @@ directory node['percona']['conf']['mysqld']['innodb_data_home_dir'] do
   recursive true
 end
 
+include_recipe 'optoro_mysql::zfs' if node['optoro_mysql']['use_zfs']
+
 include_recipe 'optoro_mysql::log_fix'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
