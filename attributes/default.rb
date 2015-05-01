@@ -28,3 +28,4 @@ default['percona']['conf']['mysqld']['innodb_use_native_aio'] = '1'
 default['percona']['conf']['mysqld']['innodb-log-group-home-dir'] = node['percona']['server']['datadir']
 default['percona']['conf']['mysqld']['innodb_data_home_dir'] = node['percona']['server']['datadir']
 default['optoro_mysql'] = {}
+default['optoro_mysql']['use_zfs'] = false

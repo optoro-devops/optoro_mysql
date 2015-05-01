@@ -1,3 +1,7 @@
+
+#<
+# This recipe adds logrotate functionality for the mysql slow log
+#>
 logrotate_app 'mysql-slow' do
   frequency 'daily'
   path '/var/optoro/log/mysql/mysql-slow.log'
