@@ -1,0 +1,21 @@
+{
+  "id": "sensu",
+  "name": {
+    "encrypted_data": "ejDEnG8TkglhYOkVWlqncL90VxmTXUdEMnu8yhbA4O4=\n",
+    "iv": "ehqGjoI/SMcdk9D8LDZ4cQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "password": {
+    "encrypted_data": "Cg3uygzmRhKDE8xabyOAXxpN+z18yu3brnluRl/gXJo=\n",
+    "iv": "WEEeDrZwuoSjCr0d1Z5ljg==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "mysql_permissions": {
+    "encrypted_data": "rVZSudnYFtz/53L7cQVl3LmTQW+w+n6hjc/ZF8516hLpLpVboBmhLDH7jDG8\nMUR8xloM0DPl0j5t8eCN9q5Mag==\n",
+    "iv": "JYQJ7H8Zi6Qvgm4dy+kgIw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
