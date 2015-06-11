@@ -11,7 +11,7 @@ group :integration do
 end
 
 group :development do
-  gem 'overcommit', '~> 0.23.0'
+  gem 'overcommit'
   gem 'guard',  '~> 2.8.0'
   gem 'guard-kitchen', '~> 0.0.2'
   gem 'guard-rubocop',  '~> 1.2.0'
