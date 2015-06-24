@@ -17,6 +17,7 @@ chef_gem 'mysql2' do
 end
 
 include_recipe 'optoro_mysql::setup'
+include_recipe 'optoro_mysql::add_percona_repo' if node['optoro_mysql']['use_custom_repo']
 include_recipe 'percona::server'
 
 directory node['percona']['conf']['mysqld']['innodb-log-group-home-dir'] do
