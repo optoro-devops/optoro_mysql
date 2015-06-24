@@ -25,6 +25,9 @@ suites:
       reload_config: false
     percona:
       encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
+      use_percona_repos: false
+    optoro_mysql:
+      use_custom_repo: true
 
 - name: zfs
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
@@ -42,3 +45,6 @@ suites:
           innodb-log-group-home-dir: '/mysql/innodb_logs'
           innodb_use_native_aio: '0'
           innodb_data_home_dir: '/mysql/innodb_data'
+      use_percona_repos: false
+    optoro_mysql:
+      use_custom_repo: true
