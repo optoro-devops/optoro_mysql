@@ -1,3 +1,6 @@
+#<
+# This is the main recipe for optoro_mysql
+#>
 include_recipe 'sysctl::default'
 
 sysctl_param 'vm.swappiness' do
@@ -16,24 +19,11 @@ chef_gem 'mysql2' do
   action :install
 end
 
+include_recipe 'optoro_mysql::zfs' if node['optoro_mysql']['use_zfs']
+include_recipe 'optoro_mysql::create_mysql_directories'
 include_recipe 'optoro_mysql::setup'
 include_recipe 'optoro_mysql::add_percona_repo' if node['optoro_mysql']['use_custom_repo']
 include_recipe 'percona::server'
-
-directory node['percona']['conf']['mysqld']['innodb-log-group-home-dir'] do
-  owner 'mysql'
-  group 'mysql'
-  mode '0700'
-  recursive true
-end
-
-directory node['percona']['conf']['mysqld']['innodb_data_home_dir'] do
-  owner 'mysql'
-  group 'mysql'
-  mode '0700'
-  recursive true
-end
-
 include_recipe 'optoro_mysql::log_fix'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'

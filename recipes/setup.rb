@@ -1,3 +1,7 @@
+#<
+# This recipe creates random passwords for mysql users
+#>
+
 # we need to check the mysql data bag item that contains user information
 # if any of the information is incomplete we want to use default values
 # and to update the databag on the chef server to contain the new values

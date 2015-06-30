@@ -1,3 +1,7 @@
+
+#<
+# This recipe adds a custom percona apt repository.
+#>
 apt_repository 'percona' do
   action :add
   uri node['optoro_mysql']['repo_uri']

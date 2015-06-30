@@ -1,3 +1,7 @@
+#<
+# This recipe adds a backup script for mysql.
+#>
+
 directory '/var/optoro' do
   owner 'root'
   group 'root'
