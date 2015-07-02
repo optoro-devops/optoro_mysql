@@ -10,4 +10,8 @@ if defined?(ChefSpec)
   def grant_mysql_database_user(resource_name)
     ChefSpec::Matchers::ResourceMatcher.new(:mysql_database_user, :grant, resource_name)
   end
+
+  def create_optoro_zfs(resource_name)
+    ChefSpec::Matchers::ResourceMatcher.new(:optoro_zfs, :create, resource_name)
+  end
 end
