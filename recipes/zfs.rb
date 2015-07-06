@@ -47,28 +47,28 @@ zpool 'mysql' do
   force true
 end
 
-zfs 'mysql/mysql' do
+optoro_zfs 'mysql/mysql' do
   mountpoint node['percona']['server']['datadir']
   atime 'off'
   compression 'lz4'
   recordsize '8k'
 end
 
-zfs 'mysql/innodb_data' do
+optoro_zfs 'mysql/innodb_data' do
   mountpoint node['percona']['conf']['mysqld']['innodb_data_home_dir']
   atime 'off'
   compression 'lz4'
   recordsize '16k'
 end
 
-zfs 'mysql/innodb_logs' do
+optoro_zfs 'mysql/innodb_logs' do
   mountpoint node['percona']['conf']['mysqld']['innodb-log-group-home-dir']
   atime 'off'
   compression 'lz4'
   recordsize '128k'
 end
 
-zfs 'mysql/tmp' do
+optoro_zfs 'mysql/tmp' do
   mountpoint node['percona']['server']['tmpdir']
   atime 'off'
   compression 'lz4'
