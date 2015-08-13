@@ -16,20 +16,9 @@ user 'deploy' do
   shell '/bin/bash'
 end
 
-group 'deploy' do
-  action :create
-  members ['deploy']
-end
-
 users_manage 'deploy' do
   action [:remove, :create]
 end
-
-# sudo 'deploy' do
-#   group '%deploy'
-#   runas 'deploy'
-#   nopasswd true
-# end
 
 directory '/var/optoro' do
   owner 'root'
