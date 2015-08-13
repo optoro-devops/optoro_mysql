@@ -11,7 +11,6 @@ directory '/home/deploy' do
   action :create
 end
 
-
 user 'deploy' do
   home '/home/deploy'
   shell '/bin/bash'
