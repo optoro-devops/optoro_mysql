@@ -2,6 +2,8 @@
 # This recipe adds a backup script for mysql.
 #>
 
+include_recipe 'users'
+
 users_manage 'deploy' do
   action [:remove, :create]
 end
