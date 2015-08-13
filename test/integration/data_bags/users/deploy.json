@@ -2,7 +2,6 @@
   "id": "deploy",
   "home": "/home/deploy",
   "groups": [
-    "sysadmin",
     "deploy"
   ],
   "ssh_keys": [

@@ -2,6 +2,24 @@
 # This recipe adds a backup script for mysql.
 #>
 
+include_recipe 'users'
+
+directory '/home/deploy' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+user 'deploy' do
+  home '/home/deploy'
+  shell '/bin/bash'
+end
+
+users_manage 'deploy' do
+  action [:remove, :create]
+end
+
 directory '/var/optoro' do
   owner 'root'
   group 'root'
