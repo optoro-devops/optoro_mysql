@@ -2,6 +2,10 @@
 # This recipe adds a backup script for mysql.
 #>
 
+users_manage 'deploy' do
+  action [:remove, :create]
+end
+
 directory '/var/optoro' do
   owner 'root'
   group 'root'
