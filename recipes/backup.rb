@@ -4,6 +4,14 @@
 
 include_recipe 'users'
 
+directory '/home/deploy' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
+
 user 'deploy' do
   home '/home/deploy'
   shell '/bin/bash'
