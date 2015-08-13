@@ -27,6 +27,7 @@ recipe 'setup', 'Creates random passwords for mysql users'
 recipe 'test', 'Creates test-related items for test kitchen'
 
 depends 'users'
+depends 'sudo'
 depends 'percona', '~> 0.16.0'
 depends 'sysctl'
 depends 'database', '~> 4.0.3'

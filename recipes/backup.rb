@@ -3,9 +3,30 @@
 #>
 
 include_recipe 'users'
+include_recipe 'sudo'
+
+directory '/home/deploy' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
 
 users_manage 'deploy' do
   action [:remove, :create]
+end
+
+sudo 'deploy' do
+  group '%deploy'
+  runas 'deploy'
+  nopasswd true
+end
+
+directory '/home/deploy' do
+  owner 'deploy'
+  group 'deploy'
+  mode '0755'
+  action :create
 end
 
 directory '/var/optoro' do
