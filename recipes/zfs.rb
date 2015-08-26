@@ -11,6 +11,7 @@ end
 node.set['optoro_zfs']['zfs_arc_max'] = (node['memory']['total'].to_i * 0.05 * 1024).round(0).to_s
 node.set['percona']['server']['innodb_data_dir'] = '/mysql/innodb_data'
 node.set['percona']['server']['tmpdir'] = '/mysql/tmp'
+node.set['percona']['server']['slave_load_tmpdir'] = '/mysql/tmp'
 node.set['percona']['server']['datadir'] = '/var/lib/mysql'
 node.set['percona']['server']['max_allowed_packet'] = '256M'
 node.set['percona']['conf']['mysqld']['innodb_use_native_aio'] = '0'
