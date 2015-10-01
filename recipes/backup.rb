@@ -4,6 +4,11 @@
 
 include_recipe 'users'
 
+chef_gem 'backup' do
+  version '4.1.9'
+  action :install
+end
+
 directory '/home/deploy' do
   owner 'root'
   group 'root'
