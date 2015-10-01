@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
-source 'http://geminabox.optoro.io'
+source 'http://gems.optoro.io/'
 
 gem 'berkshelf', '~> 3.2.1'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.3.0'
-  gem 'kitchen-ec2', :github => 'test-kitchen/kitchen-ec2', :ref => '0a378d5'
+  gem 'test-kitchen', '~> 1.4.0'
+  gem 'kitchen-ec2', '~> 0.10.0'
   gem 'kitchen-docker', '~> 1.5.0'
-  gem 'kitchen-vagrant', :git => 'git@github.com:test-kitchen/kitchen-vagrant.git', :ref => 'aa3ff9'
+  gem 'kitchen-vagrant', '~> 0.15.0'
 end
 
 group :development do
@@ -21,12 +21,12 @@ group :development do
   gem 'chef-zero', '~> 2.2.1'
   gem 'foodcritic', '~> 4.0.0'
   gem 'foodcritic-rules-optoro'
-  gem 'chefspec', '~> 4.2.0'
+  gem 'chefspec', '~> 4.3.0'
   gem 'rspec', '~> 3.1.0'
   gem 'strainer', '~> 3.4.0'
   gem 'rubocop', '~> 0.27.1'
   gem 'knife-solo', '0.4.2'
   gem 'knife-solo_data_bag', '1.1.0'
-  gem 'aws-sdk'
-  gem 'knife-cookbook-doc'
+  gem 'knife-cookbook-doc', '~> 0.16.0'
+  gem 'json'
 end
