@@ -8,6 +8,7 @@ group :integration do
   gem 'kitchen-ec2', '~> 0.10.0'
   gem 'kitchen-docker', '~> 1.5.0'
   gem 'kitchen-vagrant', '~> 0.15.0'
+  gem 'faraday_middleware', '~> 0.10'
 end
 
 group :development do

@@ -25,19 +25,28 @@ users_manage 'deploy' do
   action [:remove, :create]
 end
 
-directory '/var/optoro' do
-  owner 'root'
-  group 'root'
-  mode '0755'
+if node['optoro_mysql']['use_zfs']
+  optoro_zfs 'mysql/backups' do
+    mountpoint node['optoro_mysql']['backup_directory']
+    atime 'off'
+    compression 'lz4'
+    recordsize '8k'
+  end
+else
+  directory '/var/optoro' do
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
+
+  directory node['optoro_mysql']['backup_directory'] do
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
 end
 
-directory '/var/optoro/backup' do
-  owner 'root'
-  group 'root'
-  mode '0755'
-end
-
-cookbook_file '/var/optoro/backup/backup2.sh' do
+cookbook_file "#{node['optoro_mysql']['backup_directory']}/backup2.sh" do
   owner 'deploy'
   group 'deploy'
   mode '0755'
@@ -50,5 +59,5 @@ cron 'backup-cron-job' do
   month '*'
   weekday '*'
   user 'deploy'
-  command '/var/optoro/backup/backup2.sh'
+  command "#{node['optoro_mysql']['backup_directory']}/backup2.sh"
 end
