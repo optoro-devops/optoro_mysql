@@ -1,0 +1,26 @@
+# encoding: utf-8
+
+##
+# Backup v4.x Configuration
+#
+# Documentation: http://meskyanichi.github.io/backup
+# Issue Tracker: https://github.com/meskyanichi/backup/issues
+
+root_path "<%= node['optoro_mysql']['backup_directory'] %>/backup"
+tmp_path "<%= node['optoro_mysql']['backup_directory'] %>/.tmp"
+data_path "<%= node['optoro_mysql']['backup_directory'] %>/data"
+
+Logger.configure do
+  console.quiet     = true            # Same as command line: --quiet
+  logfile.max_bytes = 2_000_000       # Default: 500_000
+  syslog.enabled    = false           # Same as command line: --syslog
+  syslog.ident      = 'OPTORO_BACKUP' # Default: 'backup'
+end
+
+Storage::S3.defaults do |s3|
+  s3.access_key_id        = "<%= @s3_access_key_id %>"
+  s3.secret_access_key    = "<%= @s3_secret_access_key %>"
+  s3.bucket               = "<%= node['optoro_mysql']['s3']['bucket'] %>"
+  s3.region               = "<%= node['optoro_mysql']['s3']['region'] %>"
+  s3.path                 = "<%= node['optoro_mysql']['s3']['path'] %>"
+end
