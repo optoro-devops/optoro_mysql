@@ -1,0 +1,37 @@
+# encoding: utf-8
+Backup::Model.new(:rotation, "Daily database backup for <%= node['optoro_mysql']['backup_database_name'] %>") do
+
+  database MySQL do |db|
+    db.name     = <%= node['optoro_mysql']['backup_database_name'] %>
+    db.username = <%= node['optoro_mysql']['backup_database_user'] %>
+    db.password = "<%= @db_password %>"
+  end
+
+  #handle multiple rotations
+  time = Time.now
+  case
+  when time.day == 1 # first day of the month
+    storage_id = :monthly
+    #store 12 of the first day of month backups - 1 year retention
+    keep = 12
+  when time.sunday?
+    storage_id = :weekly
+    #store 4 of the first day of week backups - 1 month retention
+    keep = 4
+  when time.yday == 365
+    storage_id = :yearly
+    keep = 9999
+  else
+    storage_id = :daily
+    #store 7 of the daily backups - 1 week of retention
+    keep = 7
+  end
+
+  store_with S3, storage_id do |s3|
+    #cron job fires once a day, keeping 7 days = 1 week
+    s3.keep = keep
+    s3.path = "<%= @db_name %>/#{ storage_id }"
+  end
+
+  compress_with Gzip
+end

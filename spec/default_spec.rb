@@ -42,6 +42,10 @@ describe 'optoro_mysql::default' do
           expect(chef_run).to create_directory('/var/optoro')
         end
 
+        it 'installs the backup chef_gem' do
+          expect(chef_run).to install_chef_gem('backup')
+        end
+
         it 'create the /var/optoro/backup directory' do
           expect(chef_run).to create_directory('/var/optoro/backup')
         end

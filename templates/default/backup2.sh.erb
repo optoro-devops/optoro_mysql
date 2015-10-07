@@ -5,6 +5,6 @@ OUTPUT=$(mysql -u root -pmaster -e "select count(1) from information_schema.glob
 
 if [ -n "$OUTPUT" ]; then #get a syntax error when $OUTPUT is empty
   if [ $OUTPUT == "1" ]; then  #Back it up!
-    /opt/chef/embedded/bin/backup perform --trigger rotation --root-path /var/optoro/backup
+    /opt/chef/embedded/bin/backup perform --trigger rotation --root-path <%= node['optoro_mysql']['backup_directory'] %>
   fi
 fi
