@@ -9,6 +9,7 @@ describe 'optoro_mysql::default' do
         let(:chef_run) do
           ChefSpec::SoloRunner.new(platform: platform, version: version, log_level: :error) do |node|
             node.set['lsb']['codename'] = value['codename']
+            node.set['optoro_mysql']['backup_database_user'] = 'optiturn'
           end.converge(described_recipe)
         end
 
@@ -51,7 +52,7 @@ describe 'optoro_mysql::default' do
         end
 
         it 'create the backup script' do
-          expect(chef_run).to create_cookbook_file('/var/optoro/backup/backup2.sh')
+          expect(chef_run).to create_template('/var/optoro/backup/backup2.sh')
         end
 
         it 'creates the backup cron job' do

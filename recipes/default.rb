@@ -28,6 +28,6 @@ include_recipe 'optoro_mysql::log_fix'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
 include_recipe 'optoro_mysql::users'
-include_recipe 'optoro_mysql::backup'
+include_recipe 'optoro_mysql::backup' if node['optoro_mysql']['backup']
 include_recipe 'optoro_mysql::logrotate'
 include_recipe 'optoro_metrics::mysql'
