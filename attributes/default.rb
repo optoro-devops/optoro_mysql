@@ -29,3 +29,12 @@ default['percona']['conf']['mysqld']['innodb-log-group-home-dir'] = node['percon
 default['percona']['conf']['mysqld']['innodb_data_home_dir'] = node['percona']['server']['datadir']
 default['optoro_mysql'] = {}
 default['optoro_mysql']['use_zfs'] = false
+
+# backups
+default['optoro_mysql']['backup_directory'] = '/var/optoro/backup'
+default['optoro_mysql']['backup'] = true
+default['optoro_mysql']['backup_database_name'] = ''
+default['optoro_mysql']['backup_database_user'] = ''
+default['optoro_mysql']['s3']['bucket'] = 'optoro-db-backups'
+default['optoro_mysql']['s3']['region'] = 'us-east-1'
+default['optoro_mysql']['s3']['path'] = ''

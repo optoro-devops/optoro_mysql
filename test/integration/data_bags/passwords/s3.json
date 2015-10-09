@@ -1,0 +1,15 @@
+{
+  "id": "s3",
+  "access_key_id": {
+    "encrypted_data": "3cA1us5Oh/VLjk35G3tSaj/Si8EOjGOSXwwZieDp8IE=\n",
+    "iv": "BroAJT4DPx9L7j2bk8GptQ==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  },
+  "secret_access_key": {
+    "encrypted_data": "YRKgBz3WtUlJZSFDgMn/RD0pMMCwFrDd1B/jhxoCXCM=\n",
+    "iv": "da0CFt/X8+MAyyGTReXGOw==\n",
+    "version": 1,
+    "cipher": "aes-256-cbc"
+  }
+}
