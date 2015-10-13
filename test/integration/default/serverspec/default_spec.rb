@@ -23,6 +23,10 @@ describe 'MySQL Service' do
     end
   end
 
+  describe command('/opt/chef/embedded/bin/backup -v') do
+    its(:stdout) { should match 'Backup 4.1.9' }
+  end
+
   describe file('/etc/mysql/my.cnf') do
     it { should contain('innodb_use_native_aio = 1') }
   end
