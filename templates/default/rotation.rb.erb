@@ -2,8 +2,8 @@
 Backup::Model.new(:rotation, "Daily database backup for <%= node['optoro_mysql']['backup_database_name'] %>") do
 
   database MySQL do |db|
-    db.name     = <%= node['optoro_mysql']['backup_database_name'] %>
-    db.username = <%= node['optoro_mysql']['backup_database_user'] %>
+    db.name     = "<%= node['optoro_mysql']['backup_database_name'] %>"
+    db.username = "<%= node['optoro_mysql']['backup_database_user'] %>"
     db.password = "<%= @db_password %>"
   end
 
