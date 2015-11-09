@@ -30,4 +30,8 @@ describe 'MySQL Service' do
   describe file('/etc/mysql/my.cnf') do
     it { should contain('innodb_use_native_aio = 1') }
   end
+
+  describe file('/root/.my.cnf') do
+    it { should contain('password=testing123') }
+  end
 end

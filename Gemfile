@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 source 'http://gems.optoro.io/'
 
 gem 'berkshelf', '~> 4.0.1'
+gem 'chef-rewind'
 
 group :integration do
   gem 'test-kitchen', '~> 1.4.0'
