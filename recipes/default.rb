@@ -24,6 +24,7 @@ include_recipe 'optoro_mysql::create_mysql_directories'
 include_recipe 'optoro_mysql::setup'
 include_recipe 'optoro_mysql::add_percona_repo' if node['optoro_mysql']['use_custom_repo']
 include_recipe 'percona::server'
+include_recipe 'optoro_mysql::create_inifile'
 include_recipe 'optoro_mysql::log_fix'
 include_recipe 'percona::toolkit'
 include_recipe 'percona::backup'
