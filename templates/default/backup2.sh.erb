@@ -5,6 +5,12 @@ OUTPUT=$(mysql -u root -pmaster -e "select count(1) from information_schema.glob
 
 if [ -n "$OUTPUT" ]; then #get a syntax error when $OUTPUT is empty
   if [ $OUTPUT == "1" ]; then  #Back it up!
+    # Stash the sensu check
+    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": 10800}" http://sensu-001.optoro.io:4567/stashes
+
     /opt/chef/embedded/bin/backup perform --trigger rotation --root-path <%= node['optoro_mysql']['backup_directory'] %>
+
+    # Un-stash sensu check
+    /usr/bin/curl -X "DELETE" "http://sensu-001.optoro.io:4567/stashes/silence/$(hostname)/check-mysql-replication-status"
   fi
 fi

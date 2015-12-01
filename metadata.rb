@@ -4,7 +4,7 @@ maintainer_email 'devops@optoro.com'
 license 'MIT'
 description 'This is a wrapper around the percona cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.0.28'
+version '0.0.30'
 
 supports 'ubuntu', '= 14.04'
 
@@ -39,5 +39,4 @@ depends 'apt'
 depends 'openssl'
 depends 'logrotate'
 depends 'cron'
-depends 'optoro_metrics'
 depends 'chef-vault', '= 1.3.0' # 1.3.1 introduces chef12 features that break in chef11
