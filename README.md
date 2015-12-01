@@ -6,10 +6,12 @@ This is a wrapper around the percona cookbook
 
 ## Platform:
 
-* Ubuntu (= 14.04)
+* ubuntu (= 14.04)
 
 ## Cookbooks:
 
+* users
+* sudo
 * percona (~> 0.16.0)
 * sysctl
 * database (~> 4.0.3)
@@ -19,7 +21,7 @@ This is a wrapper around the percona cookbook
 * aws
 * apt
 * openssl
-* optoro_metrics
+* chef-vault (= 1.3.0)
 
 # Attributes
 
@@ -53,6 +55,14 @@ This is a wrapper around the percona cookbook
 * `node['percona']['conf']['mysqld']['innodb_data_home_dir']` -  Defaults to `node['percona']['server']['datadir']`.
 * `node['optoro_mysql']` -  Defaults to `{ ... }`.
 * `node['optoro_mysql']['use_zfs']` -  Defaults to `false`.
+* `node['optoro_mysql']['backup_directory']` -  Defaults to `/var/optoro/backup`.
+* `node['optoro_mysql']['backup']` -  Defaults to `true`.
+* `node['optoro_mysql']['backup_database_name']` -  Defaults to ``.
+* `node['optoro_mysql']['backup_database_user']` -  Defaults to ``.
+* `node['optoro_mysql']['s3']['bucket']` -  Defaults to `optoro-db-backups`.
+* `node['optoro_mysql']['s3']['region']` -  Defaults to `us-east-1`.
+* `node['optoro_mysql']['s3']['path']` -  Defaults to ``.
+* `node['optoro_sensu']['client_attributes']['memory']` -  Defaults to `{ ... }`.
 * `node['optoro_mysql']['use_custom_repo']` -  Defaults to `false`.
 * `node['optoro_mysql']['repo_uri']` -  Defaults to `http://aptly.optoro.io/percona`.
 * `node['optoro_mysql']['arch']` -  Defaults to `amd64`.
