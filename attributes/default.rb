@@ -38,3 +38,8 @@ default['optoro_mysql']['backup_database_user'] = ''
 default['optoro_mysql']['s3']['bucket'] = 'optoro-db-backups'
 default['optoro_mysql']['s3']['region'] = 'us-east-1'
 default['optoro_mysql']['s3']['path'] = ''
+
+default['optoro_sensu']['client_attributes']['memory'] = {
+  'warning' => '90',
+  'critical' => '95'
+}
