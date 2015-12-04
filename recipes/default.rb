@@ -19,6 +19,16 @@ chef_gem 'mysql2' do
   action :install
 end
 
+# Creating user before creation of data directory
+group 'mysql'
+
+user 'mysql' do
+  comment 'MySQL Server,,,'
+  home '/nonexistent'
+  shell '/bin/false'
+  group 'mysql'
+end
+
 include_recipe 'optoro_mysql::zfs' if node['optoro_mysql']['use_zfs']
 include_recipe 'optoro_mysql::create_mysql_directories'
 include_recipe 'optoro_mysql::setup'

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '~> 4.0.1'
+gem 'berkshelf', '>= 4.0'
 gem 'chef-rewind'
 
 group :integration do
@@ -9,6 +9,7 @@ group :integration do
   gem 'kitchen-ec2', '~> 0.10.0'
   gem 'kitchen-docker', '~> 1.5.0'
   gem 'kitchen-vagrant', '~> 0.15.0'
+  gem 'thor'
 end
 
 group :development do
@@ -24,10 +25,8 @@ group :development do
   gem 'foodcritic-rules-optoro'
   gem 'chefspec', '~> 4.3.0'
   gem 'rspec', '~> 3.1.0'
-  gem 'thor'
   gem 'rubocop', '~> 0.27.1'
   gem 'knife-solo', '0.4.2'
   gem 'knife-solo_data_bag', '1.1.0'
   gem 'knife-cookbook-doc', '~> 0.16.0'
-  gem 'json'
 end

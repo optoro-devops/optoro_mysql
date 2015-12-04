@@ -1,5 +1,0 @@
-knife test: bundle exec knife cookbook test $COOKBOOK
-rubocop:    bundle exec rubocop $SANDBOX/$COOKBOOK/
-foodcritic: bundle exec foodcritic -f any $SANDBOX/$COOKBOOK
-chefspec:   bundle exec rspec --color --require spec_helper $SANDBOX/$COOKBOOK/spec
-kitchen:    bundle exec kitchen test -d always -c 2
