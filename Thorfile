@@ -21,7 +21,7 @@ class Test < Thor
 
   desc 'foodcritic', 'Execute foodcritic linting tool'
   def foodcritic
-    execute_command('bundle exec foodcritic -f any -B ./')
+    execute_command('bundle exec foodcritic -f any -B ./ -G')
   end
 
   desc 'rubocop', 'Execute rubocop linting tool'
