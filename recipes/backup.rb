@@ -1,6 +1,6 @@
-#<
+# <
 # This recipe adds a backup script for mysql.
-#>
+# >
 
 include_recipe 'users'
 

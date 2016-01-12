@@ -1,6 +1,6 @@
-#<
+# <
 # This recipe adds mysql users.
-#>
+# >
 mysql_creds = Chef::EncryptedDataBagItem.load(node['percona']['encrypted_data_bag'], 'mysql')
 mysql_connection_info = { :host => 'localhost', :username => 'root', :password => mysql_creds['root'] }
 is_sensitive_converge = (!defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/) ? false : true

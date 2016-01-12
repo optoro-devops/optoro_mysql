@@ -9,11 +9,6 @@ class Test < Thor
     true
   end
 
-  desc 'knife_test', 'Execute knife cookbook test'
-  def knife_test
-    execute_command('bundle exec knife cookbook test -a -o .')
-  end
-
   desc 'chefspec', 'Execute chefspec tests'
   def chefspec
     execute_command('bundle exec rspec --color --require spec_helper spec/')
@@ -36,7 +31,6 @@ class Test < Thor
 
   desc 'test', 'Execute all tests'
   def test
-    knife_test
     foodcritic
     rubocop
     chefspec

@@ -33,7 +33,6 @@ shared_context 'optoro_mysql' do
         'name' => 'monitor',
         'mysql_permissions' => ['Select']
       },
-      'id' => 'mysql',
       'sensu' => {
         'name' => 'sensu',
         'password' => 'password'

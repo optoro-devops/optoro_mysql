@@ -1,6 +1,6 @@
-#<
+# <
 # This recipe adds creates various mysql-related directories
-#>
+# >
 
 directory node['percona']['conf']['mysqld']['innodb-log-group-home-dir'] do
   owner 'mysql'
