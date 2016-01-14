@@ -1,8 +1,9 @@
+AllCops:
+  Exclude:
+    - Guardfile
 LineLength:
   Enabled: false
 HashSyntax:
   Enabled: false
 Next:
-  Enabled: false
-LeadingCommentSpace:
   Enabled: false

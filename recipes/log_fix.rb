@@ -1,7 +1,7 @@
 
-#<
+# <
 # This recipe adds a fix for mysql log files.
-#>
+# >
 log_size = node['percona']['server']['innodb_log_file_size'].to_i * 1024 * 1024
 log0 = "#{node['percona']['conf']['mysqld']['innodb-log-group-home-dir']}/ib_logfile0"
 log1 = "#{node['percona']['conf']['mysqld']['innodb-log-group-home-dir']}/ib_logfile1"

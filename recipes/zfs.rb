@@ -1,6 +1,6 @@
-#<
+# <
 # This recipe adds zfs storage capabilities for mysql.
-#>
+# >
 include_recipe 'optoro_zfs'
 include_recipe 'aws'
 

@@ -1,6 +1,6 @@
-#<
+# <
 # This is the main recipe for optoro_mysql
-#>
+# >
 include_recipe 'sysctl::default'
 
 sysctl_param 'vm.swappiness' do

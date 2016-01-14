@@ -19,7 +19,7 @@ describe 'MySQL Service' do
   describe 'backup cron job' do
     describe cron do
       cron_entry = '0 5 * * * /var/optoro/backup/backup2.sh'
-      it { should have_entry(cron_entry).with_user('deploy')  }
+      it { should have_entry(cron_entry).with_user('deploy') }
     end
   end
 
