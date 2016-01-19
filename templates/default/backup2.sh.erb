@@ -11,6 +11,6 @@ if [ -n "$OUTPUT" ]; then #get a syntax error when $OUTPUT is empty
     /opt/chef/embedded/bin/backup perform --trigger rotation --root-path <%= node['optoro_mysql']['backup_directory'] %>
 
     # Change sensu check expiration to epire in an hour so it can catch up before alerting
-    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": 3600}" http://sensu-001.optoro.io:4567/stashes
+    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": 7200}" http://sensu-001.optoro.io:4567/stashes
   fi
 fi
