@@ -1,16 +1,27 @@
 #!/bin/bash
 
+# Find difference in seconds between now and 9am today using Eastern Timezone
+NOW=$(date +%s)
+NINE_AM=$(TZ="America/New_York" date -d 9am +%s)
+
+# If it is already past 9am then get tomorrow's 9am
+if [ $(expr $NINE_AM - $NOW) -lt 0 ]
+then
+  NINE_AM=$(TZ="America/New_York" date -d "tomorrow 9am" +%s)
+fi
+
+# Get number of seconds until 9am to set expiration
+EXPIRE=$(expr $NINE_AM - $NOW)
+
 #Are we running on slave?
 OUTPUT=$(mysql -u root -pmaster -e "select count(1) from information_schema.global_status WHERE variable_name = 'Slave_running' AND variable_value = 'ON';" | head -2 | tail -1``)
 
 if [ -n "$OUTPUT" ]; then #get a syntax error when $OUTPUT is empty
   if [ $OUTPUT == "1" ]; then  #Back it up!
     # Stash the sensu check
-    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": 10800}" http://sensu-001.optoro.io:4567/stashes
+    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": $EXPIRE}" http://sensu-001.optoro.io:4567/stashes
 
     /opt/chef/embedded/bin/backup perform --trigger rotation --root-path <%= node['optoro_mysql']['backup_directory'] %>
 
-    # Change sensu check expiration to epire in an hour so it can catch up before alerting
-    /usr/bin/curl --data "{\"path\":\"silence/$(hostname)/check-mysql-replication-status\",\"content\":{\"message\":\"Silencing during backup\"},\"expire\": 7200}" http://sensu-001.optoro.io:4567/stashes
   fi
 fi
