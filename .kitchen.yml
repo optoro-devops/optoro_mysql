@@ -62,3 +62,21 @@ suites:
       backup_database_user: "optiturn"
       use_custom_repo: true
       use_zfs: true
+
+- name: consul
+  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
+  run_list:
+    - recipe[optoro_mysql::test]
+    - recipe[optoro_aptly::repos]
+    - recipe[optoro_mysql::default]
+  attributes:
+    chef_client:
+      reload_config: false
+    percona:
+      encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
+      use_percona_repos: false
+    optoro_mysql:
+      backup_database_name: "inventory_production"
+      backup_database_user: "optiturn"
+      use_custom_repo: true
+      register_consul_service: true

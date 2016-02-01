@@ -43,3 +43,6 @@ default['optoro_sensu']['client_attributes']['memory'] = {
   'warning' => '90',
   'critical' => '95'
 }
+
+# Consul
+default['optoro_mysql']['register_consul_service'] = false
