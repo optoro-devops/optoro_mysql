@@ -4,7 +4,7 @@ maintainer_email 'devops@optoro.com'
 license 'MIT'
 description 'This is a wrapper around the percona cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.0.34'
+version '0.0.35'
 
 supports 'ubuntu', '= 14.04'
 
@@ -40,3 +40,4 @@ depends 'openssl'
 depends 'logrotate'
 depends 'cron'
 depends 'chef-vault'
+depends 'optoro_consul'
