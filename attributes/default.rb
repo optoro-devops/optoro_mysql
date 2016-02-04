@@ -45,4 +45,4 @@ default['optoro_sensu']['client_attributes']['memory'] = {
 }
 
 # Consul
-default['optoro_mysql']['register_consul_service'] = false
+default['optoro_consul']['register_consul_service'] = false
