@@ -16,7 +16,7 @@
 # Uncomment the following lines to make the configuration take effect.
 
 PreCommit:
-  Rubocop:
+  RuboCop:
     enabled: true
     on_warn: fail # Treat all warnings as failures
 
@@ -28,6 +28,10 @@ PreCommit:
 
   ShellCheck:
     enabled: false
+
+  CookbookVersion:
+    description: 'Checking for updated cookbook version'
+    enabled: true
 
 #PostCheckout:
 #  ALL: # Special hook name that customizes all hooks of this type

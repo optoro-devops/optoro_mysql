@@ -79,4 +79,8 @@ suites:
       backup_database_name: "inventory_production"
       backup_database_user: "optiturn"
       use_custom_repo: true
+    optoro_consul:
       register_consul_service: true
+      service:
+        checks:
+          - { script: 'service mysql status', interval: '5s' }
