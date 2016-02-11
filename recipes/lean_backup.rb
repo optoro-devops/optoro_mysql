@@ -13,7 +13,7 @@ directory "#{backup_dir}/lean" do
   mode 0775
 end
 
-file "#{backup_dir}/lean/inv_tables.csv" do
+file "#{backup_dir}/lean/inventory_tables.csv" do
   owner 'deploy'
   group 'deploy'
   mode 0775
