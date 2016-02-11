@@ -4,7 +4,9 @@ driver:
   security_group_ids: ["sg-69ce330d"]
   subnet_id: subnet-2f5f9f04
   region: us-east-1
-  ssh_key: <%= ENV['AWS_SSH_KEY'] %>
+  #ssh_key: <%= ENV['AWS_SSH_KEY'] %>
+  #aws_ssh_key_id: <%= ENV['AWS_SSH_KEY_ID'] %>
+  aws_ssh_key_id: "1232423423435"
   availability_zone: us-east-1e
   flavor_id: t2.medium
   image_id: ami-92dfa7fa

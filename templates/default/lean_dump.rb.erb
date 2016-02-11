@@ -1,0 +1,40 @@
+require "csv"
+
+cutoff = (Time.now - (90 * 24 * 3600)).strftime("%Y-%m-%d")
+output = "lean_inventory_dump.sql"
+`rm -f #{output}` # Cleanup anything left from previous runs
+
+CSV.foreach("./inventory_tables.csv", headers: true) do |row|
+  table_name = row["Table Name"].strip
+
+  # Ignore views for now
+  next if table_name.match(/^view/)
+
+  category   = row["Category"]
+
+  if  category == "2"
+    created_at = `mysql -uroot -e "select * from information_schema.columns \
+                                   where table_schema = 'inventory_development' \
+                                   and table_name ='#{table_name}' \
+                                   and column_name = 'created_at';"`
+    if !created_at.empty? # not empty string
+      puts "Creating Dump for #{table_name}"
+      `mysqldump -uroot inventory_development #{table_name} --where="created_at > \'#{cutoff}\'" >> #{output}`
+    elsif table_name == "pickable_orders" || table_name == "pickable_items"
+      `mysqldump -uroot inventory_development #{table_name} --where="order_date > \'#{cutoff}\'" >> #{output}`
+    end
+
+  elsif category == "1"
+    puts "Creating Dump for #{table_name}"
+    # TODO: Add listing group templates
+    if table_name == "conditions"
+      `mysqldump -uroot inventory_development #{table_name} --where="created_at > \'#{cutoff}\' OR user_created = 0" >> #{output}`
+    elsif table_name == "listing_group_templates"
+      `mysqldump -uroot inventory_development #{table_name} --where="created_at > \'#{cutoff}\' OR id IN (1,3,4,5)" >> #{output}`
+    else
+      `mysqldump -uroot inventory_development #{table_name} >> #{output}`
+    end
+  else
+    `mysqldump -uroot inventory_development #{table_name} --where="TRUE=FALSE" >> #{output}`
+  end
+end;nil
