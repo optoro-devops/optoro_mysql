@@ -39,6 +39,9 @@ default['optoro_mysql']['s3']['bucket'] = 'optoro-db-backups'
 default['optoro_mysql']['s3']['region'] = 'us-east-1'
 default['optoro_mysql']['s3']['path'] = ''
 
+# lean_backups
+default['optoro_mysql']['lean_backup_directory'] = '/var/optoro/lean_backup'
+
 default['optoro_sensu']['client_attributes']['memory'] = {
   'warning' => '90',
   'critical' => '95'

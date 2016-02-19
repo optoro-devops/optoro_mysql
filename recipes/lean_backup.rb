@@ -2,28 +2,20 @@
 # This recipe creates a trimmed down dump of the database
 # >
 
-backup_dir = node['optoro_mysql']['backup_directory']
+backup_dir = node['optoro_mysql']['lean_backup_directory']
 
-directory "#{backup_dir}/lean" do
-  action :create
-  user 'deploy'
-  group 'deploy'
-  recursive true
-  user 'deploy'
-  mode 0775
-end
-
-file "#{backup_dir}/lean/inventory_tables.csv" do
-  owner 'deploy'
-  group 'deploy'
-  mode 0775
-end
-
-template "#{backup_dir}/lean/lean_dump.rb" do
-  source 'lean_dump.rb.erb'
+file "#{backup_dir}/inventory_tables.csv" do
   owner 'deploy'
   group 'deploy'
   mode 0644
+  action :nothing
+end
+
+file "#{backup_dir}/dev_mysql_dump.rb" do
+  owner 'deploy'
+  group 'deploy'
+  mode 0775
+  action :nothing
 end
 
 cron 'lean-db-dump-cron-job' do
@@ -34,5 +26,5 @@ cron 'lean-db-dump-cron-job' do
   weekday '*'
   user 'deploy'
   mailto 'devops@optoro.com'
-  command "ruby #{backup_dir}/lean/lean_dump.rb"
+  command "ruby #{backup_dir}/dev_mysql_dump.rb inventory_production"
 end
