@@ -40,8 +40,8 @@ else
   end
 
   directory node['optoro_mysql']['backup_directory'] do
-    owner 'root'
-    group 'root'
+    owner 'deploy'
+    group 'deploy'
     mode '0755'
   end
 end
