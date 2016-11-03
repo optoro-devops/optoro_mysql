@@ -3,7 +3,7 @@
 # >
 mysql_creds = Chef::EncryptedDataBagItem.load(node['percona']['encrypted_data_bag'], 'mysql')
 mysql_connection_info = { :host => 'localhost', :username => 'root', :password => mysql_creds['root'] }
-is_sensitive_converge = (!defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/) ? false : true
+is_sensitive_converge = !defined?(ChefSpec) && Chef::Config['chef_server_url'] =~ /localhost/ ? false : true
 
 # have to remove anonymous user as it causes issues for new users if it still exists
 execute 'remove anonymous user' do # ~FC009

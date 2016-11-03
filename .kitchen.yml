@@ -1,10 +1,17 @@
 ---
-driver_plugin: vagrant
+driver_plugin: joyent
 driver_config:
-  require_chef_omnibus: 12.6.0
-  customize:
-    natdnshostresolver1: "on"
-    memory: 2048
+  vm_hostname: mysql
+  joyent_username: <%= ENV['SDC_ACCOUNT'] %>
+  joyent_keyfile: <%= ENV['SDC_KEY_FILE'] %>
+  joyent_keyname: <%= ENV['SDC_KEY_ID'] %>
+  joyent_url: <%= ENV['SDC_URL'] %>
+  require_chef_omnibus: '12.6.0'
+  joyent_networks:
+   - c0bf4505-75ca-41ea-a706-a8ca34a84f54
+  joyent_image_id: a3c7b9ba-279d-11e6-aecd-07e1aa0cc545
+  joyent_flavor_id: g4-general-4G
+  joyent_version: '~7.0'
 provisioner: chef_zero
 
 platforms:
@@ -30,24 +37,3 @@ suites:
       backup_database_name: "inventory_production"
       backup_database_user: "optiturn"
       use_custom_repo: true
-- name: consul
-  encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
-  run_list:
-    - recipe[optoro_mysql::test]
-    - recipe[optoro_aptly::repos]
-    - recipe[optoro_mysql::default]
-  attributes:
-    chef_client:
-      reload_config: false
-    percona:
-      encrypted_data_bag_secret_file: '/tmp/kitchen/encrypted_data_bag_secret'
-      use_percona_repos: false
-    optoro_mysql:
-      backup_database_name: "inventory_production"
-      backup_database_user: "optiturn"
-      use_custom_repo: true
-    optoro_consul:
-      register_consul_service: true
-      service:
-        checks:
-          - { script: 'service mysql status', interval: '5s' }

@@ -41,4 +41,5 @@ include_recipe 'percona::backup'
 include_recipe 'optoro_mysql::users'
 include_recipe 'optoro_mysql::backup' if node['optoro_mysql']['backup']
 include_recipe 'optoro_mysql::logrotate'
-include_recipe 'optoro_mysql::consul' if node['optoro_consul']['register_consul_service']
+include_recipe 'optoro_mysql::consul'
+include_recipe 'optoro_mysql::mysqld_exporter'

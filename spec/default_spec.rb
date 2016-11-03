@@ -13,7 +13,7 @@ describe 'optoro_mysql::default' do
           end.converge(described_recipe)
         end
 
-        %w( libmysqlclient-dev build-essential ).each do |p|
+        %w(libmysqlclient-dev build-essential).each do |p|
           it "installs the #{p} package" do
             expect(chef_run).to install_package p
           end
