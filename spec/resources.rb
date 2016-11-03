@@ -8,5 +8,5 @@ module Resources
       'versions'    => ['14.04'],
       'codename'    => 'trusty'
     }
-  }
+  }.freeze
 end

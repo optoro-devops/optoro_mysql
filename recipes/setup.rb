@@ -27,7 +27,7 @@ data_bag_hash = mysql_creds.to_hash
 
 # these are special users to the percona cookbook and should just be a key and a password value
 # if the user is not set, add it to the hash a create a password for it
-%w( root backup replication ).each do |special_user|
+%w(root backup replication).each do |special_user|
   unless data_bag_hash[special_user]
     needs_update = true
     data_bag_hash[special_user] = secure_password

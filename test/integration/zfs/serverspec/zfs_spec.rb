@@ -14,7 +14,7 @@ describe 'MySQL using ZFS' do
     it { should be_listening }
   end
 
-  %w( /var/optoro/backup/backup2.sh /etc/logrotate.d/mysql-slow ).each do |files|
+  %w(/var/optoro/backup/backup2.sh /etc/logrotate.d/mysql-slow).each do |files|
     describe file(files) do
       it { should be_file }
     end
