@@ -20,6 +20,7 @@ default['percona']['server']['key_buffer_size'] = '64M'
 default['percona']['server']['max_connections'] = 4000
 default['percona']['server']['server_id'] = Chef::Config[:node_name].gsub(/[^0-9]/, '').to_i + 2
 default['percona']['server']['performance_schema'] = true
+default['percona']['server']['skip_name_resolve'] = true
 default['percona']['main_config_file'] = '/etc/mysql/my.cnf'
 default['percona']['encrypted_data_bag_secret_file'] = '/etc/chef/encrypted_data_bag_secret'
 default['percona']['client']['packages'] = %w(libperconaserverclient18-dev percona-server-client-5.5)
