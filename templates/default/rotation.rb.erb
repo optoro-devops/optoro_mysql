@@ -5,6 +5,7 @@ Backup::Model.new(:rotation, "Daily database backup for <%= node['optoro_mysql']
     db.name     = "<%= node['optoro_mysql']['backup_database_name'] %>"
     db.username = "<%= node['optoro_mysql']['backup_database_user'] %>"
     db.password = "<%= @db_password %>"
+    db.additional_options = [ '--single-transaction', '--master-data=2' ]
   end
 
   #handle multiple rotations
