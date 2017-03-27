@@ -5,7 +5,7 @@ license 'MIT'
 description 'This is a wrapper around the percona cookbook'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url 'https://github.com/optoro-devops/optoro_mysql'
-version '0.0.45'
+version '0.0.46'
 
 supports 'ubuntu', '= 14.04'
 
