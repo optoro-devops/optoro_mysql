@@ -10,7 +10,7 @@ env DEFAULTS=/etc/default/mysqld_exporter
 env RUNDIR=/var/run/mysqld_exporter
 env PID_FILE=/var/run/mysqld_exporter/mysqld_exporter.pid
 
-env DATA_SOURCE_NAME='<%= @user %>:<%= @password %>@(localhost)/'
+env DATA_SOURCE_NAME='<%= @user %>:<%= @password %>@(localhost:3306)/'
 
 pre-start script
   [ -e $DEFAULTS ] && . $DEFAULTS
