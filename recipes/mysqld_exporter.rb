@@ -38,7 +38,7 @@ consul_definition 'mysqld-metrics' do
     check: {
       interval: '10s',
       timeout: '5s',
-      http: 'http://localhost:9104/metrics'
+      script: 'curl -s http://localhost:9104/metrics > /dev/null'
     }
   )
   notifies :reload, 'consul_service[consul]', :delayed
