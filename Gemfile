@@ -1,6 +1,6 @@
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '5.6.5'
+gem 'berkshelf', '5.1.0'
 gem 'chef-rewind'
 
 group :integration do
