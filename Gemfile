@@ -1,6 +1,6 @@
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '5.1.0'
+gem 'berkshelf', '5.6.5'
 gem 'chef-rewind'
 
 group :integration do
@@ -15,6 +15,7 @@ group :development do
   gem 'overcommit'
   gem 'git'
   gem 'chef', '~> 12.6.0'
+  gem 'chef-vault'
   gem 'guard'
   gem 'guard-kitchen'
   gem 'guard-rubocop'
