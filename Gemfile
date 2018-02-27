@@ -1,6 +1,6 @@
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '5.1.0'
+gem 'berkshelf', '~> 6.3.1'
 gem 'chef-rewind'
 
 group :integration do
@@ -14,7 +14,7 @@ end
 group :development do
   gem 'overcommit'
   gem 'git'
-  gem 'chef', '~> 12.6.0'
+  gem 'chef', '~> 12.7.2'
   gem 'chef-vault'
   gem 'guard'
   gem 'guard-kitchen'
@@ -22,10 +22,10 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-foodcritic'
   gem 'guard-bundler'
-  gem 'chef-zero', '~> 4.4.0'
+  gem 'chef-zero', '~> 4.5'
   gem 'foodcritic', '~> 5.0.0'
   gem 'foodcritic-rules-optoro'
-  gem 'chefspec', '~> 5.2.0'
+  gem 'chefspec'
   gem 'rspec', '~> 3.4.0'
   gem 'thor'
   gem 'rubocop', '~> 0.42.0'
