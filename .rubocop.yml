@@ -7,3 +7,5 @@ HashSyntax:
   Enabled: false
 Next:
   Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
