@@ -1,14 +1,12 @@
 source 'http://gems.optoro.io/'
 
-gem 'berkshelf', '~> 6.3.1'
+gem 'berkshelf'
 gem 'chef-rewind'
 
 group :integration do
-  gem 'test-kitchen', '~> 1.13.2'
-  gem 'kitchen-ec2', '~> 0.10.0'
-  gem 'kitchen-docker', '~> 2.3.0'
-  gem 'kitchen-vagrant', '~> 0.19.0'
-  gem 'kitchen-joyent', '~> 0.2.2'
+  gem 'test-kitchen'
+  gem 'kitchen-docker'
+  gem 'kitchen-joyent'
 end
 
 group :development do

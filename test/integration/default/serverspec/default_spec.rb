@@ -24,7 +24,7 @@ describe 'MySQL Service' do
   end
 
   describe command('/opt/chef/embedded/bin/backup -v') do
-    its(:stdout) { should match 'Backup 4.1.9' }
+    its(:stdout) { should match 'Backup 4.4.0' }
   end
 
   describe file('/etc/mysql/my.cnf') do

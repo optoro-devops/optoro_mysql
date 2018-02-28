@@ -1,27 +1,27 @@
 ---
-driver_plugin: joyent
-driver_config:
-  vm_hostname: mysql
+driver:
+  name: joyent
   joyent_username: <%= ENV['SDC_ACCOUNT'] %>
   joyent_keyfile: <%= ENV['SDC_KEY_FILE'] %>
   joyent_keyname: <%= ENV['SDC_KEY_ID'] %>
   joyent_url: <%= ENV['SDC_URL'] %>
-  require_chef_omnibus: '12.6.0'
   joyent_networks:
    - c0bf4505-75ca-41ea-a706-a8ca34a84f54
   joyent_image_id: a3c7b9ba-279d-11e6-aecd-07e1aa0cc545
   joyent_flavor_id: g4-general-4G
   joyent_version: '~7.0'
-provisioner: chef_zero
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: '12.7.2'
 
 platforms:
 - name: ubuntu-14.04
-  driver_config:
-    box: opscode_ubuntu-14.04_chef-provisionerless
-    box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-14.04_chef-provisionerless.box
 
 suites:
 - name: default
+  driver_config:
+    vm_hostname: mysql
   encrypted_data_bag_secret_key_path: "test/integration/encrypted_data_bag_secret"
   run_list:
     - recipe[optoro_mysql::test]
