@@ -1,6 +1,6 @@
 ---
-driver:
-  name: joyent
+driver_plugin: joyent
+driver_config:
   joyent_username: <%= ENV['SDC_ACCOUNT'] %>
   joyent_keyfile: <%= ENV['SDC_KEY_FILE'] %>
   joyent_keyname: <%= ENV['SDC_KEY_ID'] %>
