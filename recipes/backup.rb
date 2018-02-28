@@ -5,7 +5,7 @@
 include_recipe 'users'
 
 chef_gem 'backup' do
-  version '4.1.9'
+  version '4.4.0'
   action :install
 end
 
